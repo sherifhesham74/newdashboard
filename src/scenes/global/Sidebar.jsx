@@ -135,13 +135,14 @@ const Sideebar = () => {
             >
               Data
             </Typography>
+            <Link   to='/team' style={{ textDecoration: 'none' }}>
             <Item
               title="Manage Team"
-              to='/team'
+            
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> </Link>
             <Item
               title="Contacts Information"
               to="/contacts"

@@ -2,7 +2,8 @@ import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import EmailIcon from "@mui/icons-material/Email";
+import LocalDiningIcon from '@mui/icons-material/LocalDining';
+import SailingIcon from '@mui/icons-material/Sailing';
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
@@ -21,7 +22,7 @@ const Dashboard = () => {
     <Box m="20px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+        <Header title="Orang Bay Dashboard" subtitle="Welcome to your dashboard" />
 
         <Box>
           <Button
@@ -56,12 +57,12 @@ const Dashboard = () => {
         >
           <StatBox
             title="12,361"
-            subtitle="Emails Sent"
+            subtitle="Boats"
             progress="0.75"
             increase="+14%"
             icon={
-              <EmailIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+              <SailingIcon
+                sx={{ color: colors.redAccent[500], fontSize: "26px" }}
               />
             }
           />
@@ -74,13 +75,13 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="431,225"
-            subtitle="Sales Obtained"
+            title="1431,225"
+            subtitle="Comings"
             progress="0.50"
             increase="+21%"
             icon={
               <PointOfSaleIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                sx={{ color: colors.redAccent[500], fontSize: "26px" }}
               />
             }
           />
@@ -99,7 +100,7 @@ const Dashboard = () => {
             increase="+5%"
             icon={
               <PersonAddIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                sx={{ color: colors.redAccent[500], fontSize: "26px" }}
               />
             }
           />
@@ -113,12 +114,12 @@ const Dashboard = () => {
         >
           <StatBox
             title="1,325,134"
-            subtitle="Traffic Received"
+            subtitle="Resturants"
             progress="0.80"
             increase="+43%"
             icon={
-              <TrafficIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+              <LocalDiningIcon
+                sx={{ color: colors.redAccent[500], fontSize: "26px" }}
               />
             }
           />
