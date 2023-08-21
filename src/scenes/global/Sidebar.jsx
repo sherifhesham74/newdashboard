@@ -135,14 +135,14 @@ const Sideebar = () => {
             >
               Data
             </Typography>
-          {/* <Link   to='/team' style={{ textDecoration: 'none' }}>
+            <Link   to='/team' style={{ textDecoration: 'none' }}>
             <Item
               title="Manage Team"
             
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            /> </Link>  */}
+            /> </Link>
              <Link   to='/helpdesk' style={{ textDecoration: 'none' }}>
             <Item
               title="HelpDesk"
@@ -167,8 +167,8 @@ const Sideebar = () => {
               sx={{ m: "15px 0 5px 20px" }}
             >
               Pages
-            </Typography> */}
-{/*             <Item
+            </Typography>
+            <Item
               title="Profile Form"
               to="/form"
               icon={<PersonOutlinedIcon />}
