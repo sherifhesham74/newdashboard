@@ -93,11 +93,11 @@ const Sideebar = () => {
           </MenuItem>
 
           {!isCollapsed && (
-            <Box mb="25px">
+            <Box mb="15px">
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
                   alt="profile-user"
-                  width="80px"
+                  width="100px"
                   height="50px"
                   src={`../logo.png`}
                   style={{ cursor: "pointer", borderRadius: "10%" }}
@@ -117,9 +117,10 @@ const Sideebar = () => {
             </Box>
           )}
 
-          <Box paddingLeft={isCollapsed ? undefined : "10%"}>
+          <Box paddingLeft={isCollapsed ? undefined : "0%"}>
             <Link to='/' style={{ textDecoration: 'none' }}>
             <Item
+           
               title="Dashboard"
               to="/"
               icon={<HomeOutlinedIcon />}
@@ -134,46 +135,47 @@ const Sideebar = () => {
             >
               Data
             </Typography>
-            <Link   to='/team' style={{ textDecoration: 'none' }}>
+          {/* <Link   to='/team' style={{ textDecoration: 'none' }}>
             <Item
               title="Manage Team"
             
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            /> </Link>
+            /> </Link>  */}
              <Link   to='/helpdesk' style={{ textDecoration: 'none' }}>
             <Item
-              title="Help Desk"
+              title="HelpDesk"
+              className='mr-4'
               to="/helpdesk"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             </Link>
-            <Item
+{/*             <Item
               title="Invoices Balances"
               to="/invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
 
-            <Typography
+            {/* <Typography
               variant="h6"
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Pages
-            </Typography>
-            <Item
+            </Typography> */}
+{/*             <Item
               title="Profile Form"
               to="/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
-            <Item
+            /> */}
+{/*             <Item
               title="Calendar"
               to="/calendar"
               icon={<CalendarTodayOutlinedIcon />}
@@ -186,7 +188,7 @@ const Sideebar = () => {
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
 
             <Typography
               variant="h6"
@@ -213,20 +215,20 @@ const Sideebar = () => {
               setSelected={setSelected}
             />
             </Link>
-            <Item
+{/*             <Item
               title="Line Chart"
               to="/line"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
-            <Item
+            /> */}
+{/*             <Item
               title="Geography Chart"
               to="/geography"
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
           </Box>
         </Menu>
       </usePro>

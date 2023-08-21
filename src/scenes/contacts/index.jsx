@@ -79,7 +79,7 @@ const Contacts = () => {
     setIsModalOpen(false);
   };
   return (
-    <Box >
+    <Box  ml='20px'>
     <Container m="20px">
           <Header
         title="Help Desk"
