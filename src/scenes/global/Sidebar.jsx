@@ -134,14 +134,14 @@ const Sideebar = () => {
             >
               Data
             </Typography>
-            <Link   to='/team' style={{ textDecoration: 'none' }}>
+{/*             <Link   to='/team' style={{ textDecoration: 'none' }}>
             <Item
               title="Manage Team"
             
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            /> </Link>
+            /> </Link> */}
              <Link   to='/helpdesk' style={{ textDecoration: 'none' }}>
             <Item
               title="Help Desk"
@@ -151,13 +151,13 @@ const Sideebar = () => {
               setSelected={setSelected}
             />
             </Link>
-            <Item
+{/*             <Item
               title="Invoices Balances"
               to="/invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
 
             <Typography
               variant="h6"
@@ -166,14 +166,14 @@ const Sideebar = () => {
             >
               Pages
             </Typography>
-            <Item
+{/*             <Item
               title="Profile Form"
               to="/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
-            <Item
+            /> */}
+{/*             <Item
               title="Calendar"
               to="/calendar"
               icon={<CalendarTodayOutlinedIcon />}
@@ -186,7 +186,7 @@ const Sideebar = () => {
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
 
             <Typography
               variant="h6"
@@ -213,20 +213,20 @@ const Sideebar = () => {
               setSelected={setSelected}
             />
             </Link>
-            <Item
+{/*             <Item
               title="Line Chart"
               to="/line"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
-            <Item
+            /> */}
+{/*             <Item
               title="Geography Chart"
               to="/geography"
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
           </Box>
         </Menu>
       </usePro>
