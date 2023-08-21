@@ -84,9 +84,7 @@ const Sideebar = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.orange} className="section-title">
-                  Orange Bay
-                </Typography>
+            
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
                 </IconButton>
@@ -112,7 +110,7 @@ const Sideebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Orange Admin
+                   Admin
                 </Typography>
                 
               </Box>
@@ -120,6 +118,7 @@ const Sideebar = () => {
           )}
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
+            <Link to='/' style={{ textDecoration: 'none' }}>
             <Item
               title="Dashboard"
               to="/"
@@ -127,7 +126,7 @@ const Sideebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-
+</Link>
             <Typography
               variant="h6"
               color={colors.grey[300]}
@@ -143,13 +142,15 @@ const Sideebar = () => {
               selected={selected}
               setSelected={setSelected}
             /> </Link>
+             <Link   to='/helpdesk' style={{ textDecoration: 'none' }}>
             <Item
-              title="Contacts Information"
-              to="/contacts"
+              title="Help Desk"
+              to="/helpdesk"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
+            </Link>
             <Item
               title="Invoices Balances"
               to="/invoices"

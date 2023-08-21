@@ -35,3 +35,6 @@ body {
   background-color: #ffffff;
   color: #fff;
 }
+.inputs-enter{
+  width: 200px !important;
+}

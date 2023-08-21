@@ -13,7 +13,6 @@ import {
   MenuItem,
   TextField,
   Button,
-  Container,
 } from "@mui/material";
 import Modal from 'react-modal';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -22,9 +21,8 @@ import { tokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
-import Membership from "./membership"; // Make sure you import the Membership component
 
-const Contacts = () => {
+const Membership = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -35,7 +33,7 @@ const Contacts = () => {
     { label: "Number", accessor: "Number" },
     { label: "Phone Number", accessor: "phone" },
     { label: "Type", accessor: "Type" },
-    { label: "ProgramType", accessor: "ProgramType" },
+    { label: "MembershipType", accessor: "ProgramType" },
     { label: "Payment", accessor: "Payment" },
     { label: "Provider", accessor: "Provider" },
     { label: "Details", accessor: "details" },
@@ -57,15 +55,10 @@ const Contacts = () => {
       (!typeFilter || contact.Type.includes(typeFilter))
 
   );
-
-  const [activeComponent, setActiveComponent] = useState("contacts"); // Default active component is "contacts"
-
-  // ... (rest of your state and filtering logic)
-
-  const toggleComponent = () => {
-    setActiveComponent(activeComponent === "contacts" ? "membership" : "contacts");
+  const handleDetailsClick = (row) => {
+    // You can implement your logic here to show the details of the selected row
+    console.log("Details clicked for row:", row);
   };
-
   const [selectedItem, setSelectedItem] = useState(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -80,40 +73,13 @@ const Contacts = () => {
   };
   return (
     <Box >
-    <Container m="20px">
-          <Header
-        title="Help Desk"
+       <TableContainer component={Paper}>
+               <Header
+        title="Membership Tbale"
        // subtitle="List of Contacts for Future Reference"
       />
-         <Button
-          variant={activeComponent === "contacts" ? "contained" : "outlined"}
-          onClick={toggleComponent} className="mt-2 mb-2 "
-          style={{
-            color: activeComponent === "membership" ? "#094e6c" : "#fff",
-            backgroundColor: activeComponent === "membership" ? "#fff" : "#094e6c",
-          }}
-      >
-          Program
-        </Button>
-        <Button
-          variant={activeComponent === "membership" ? "contained" : "outlined"}
-          onClick={toggleComponent} className="mt-2 mb-2"
-          style={{
-            color: activeComponent === "contacts" ? "#094e6c" : "#fff",
-            backgroundColor: activeComponent === "contacts" ? "#fff" : "#094e6c",
-          }}
-       >
-          Membership
-        </Button>
-
-   {activeComponent === "contacts" ? (
-   
-        <TableContainer component={Paper}>
-                <Header
-        title="Program Tbale"
-       // subtitle="List of Contacts for Future Reference"
-      />
-               <Box display="flex" justifyContent="space-between"  mb="10px" >
+      {/* Filter Dropdowns */}
+      <Box display="flex" justifyContent="space-between"  mb="10px" >
       <Box >
         <FormControl variant="outlined" className="inputs-enter "  >
         <Select
@@ -209,51 +175,7 @@ const Contacts = () => {
          </Box>
    
       </Box>
-           <Table>
-          <TableHead>
-            <TableRow>
-              {columns.map((column) => (
-                <TableCell key={column.accessor} className="white-text">
-                  {column.label}
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {filteredContacts.map((row) => (
-              <TableRow key={row.id}>
-                {columns.map((column) => (
-                  <TableCell key={column.accessor}>
-                  {column.accessor === "details" ? (
-                    // Render details column content
-                    <ArrowForwardIosIcon
-                      variant="outlined"
-                      // startIcon={<ArrowForwardIosIcon />}
-                      onClick={() => openModal(column)}
-                    >
-                      Details
-                    </ArrowForwardIosIcon>
-                  ) : (
-                    row[column.accessor]
-                  )}
-                </TableCell>
-                ))}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        </TableContainer>
-      ) : (
-        
-        <Membership />
-       
-      )}
-
-</Container>
-      
-      {/* Filter Dropdowns */}
- 
-      {/* <TableContainer component={Paper}>
+     
         <Table>
           <TableHead>
             <TableRow>
@@ -288,7 +210,7 @@ const Contacts = () => {
           </TableBody>
         </Table>
       
-      </TableContainer> */}
+      </TableContainer>
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
@@ -310,4 +232,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default Membership;
